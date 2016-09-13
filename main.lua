@@ -24,6 +24,7 @@ function love.load()
   queueTextbox(4,60,100,32,{"Really.","Goodbye."},0.5)
   queueTextbox(132,72,50,32,"But--",1)
   queueTextbox(4,70,50,32,"No.",0.2,true)
+  queueTextbox(4,80,55,32,"Sheesh.",0.5,false,1.5)
   table.insert(textBoxes,newBox)
 end
 

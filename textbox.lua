@@ -1,6 +1,6 @@
 -- Textbox library by Chris Scott
 function newTextbox(x,y,w,h,text,time)
-  tempBox = {}
+  local tempBox = {}
   tempBox.x,tempBox.y=x,y
   tempBox.w,tempBox.h=w,h
   tempBox.text=text
@@ -9,12 +9,13 @@ function newTextbox(x,y,w,h,text,time)
   table.insert(textBoxes, tempBox)
 end
 
-function queueTextbox(x,y,w,h,text,time,simul)
-  tempBox = {}
+function queueTextbox(x,y,w,h,text,time,simul,killTime)
+  local tempBox = {}
   tempBox.x,tempBox.y=x,y
   tempBox.w,tempBox.h=w,h
   tempBox.text=text
   tempBox.time=time
+  tempBox.killTime=killTime or nil
   tempBox.pointer=1
   tempBox.simul=simul or false
   table.insert(textBoxQ, tempBox)
@@ -53,7 +54,7 @@ function updateTextQ(box,tab,i,dt)
   end
   if box.time <= 0 or box.time == nil then
     if #textBoxes < 1 or box.simul then	
-      newTextbox(box.x,box.y,box.w,box.h,box.text)   
+      newTextbox(box.x,box.y,box.w,box.h,box.text,box.killTime)   
       table.remove(tab,i)
     end
   end
