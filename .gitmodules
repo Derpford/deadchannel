@@ -1,0 +1,6 @@
+[submodule "bump.lua"]
+	path = bump.lua
+	url = https://github.com/kikito/bump.lua
+[submodule "Simple-Tiled-Implementation"]
+	path = Simple-Tiled-Implementation
+	url = https://github.com/karai17/Simple-Tiled-Implementation
